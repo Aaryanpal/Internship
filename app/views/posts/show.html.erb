@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+<h2>Comments</h2><span><%= @post.comments.count %></span>
+<%= render @post.comments %>
+
+<h2>Add a Comments</h2>
+<%=  form_with model: [ @post, @post.comments.build ] do |form|%>
+  <%= form.label :commenter %>
+ <%= form.text_field :commenter %>
+  <%= form.label :body%>
+  <%= form.text_area :body %>
+  <%= form.submit %>
+<% end %>
