@@ -48,5 +48,5 @@ NOTE:
 
 # Solution Video
 
-![Soution Video](/test_application/demo_vide.gif)
+![Soution Video](/demo_vide.gif)
 
