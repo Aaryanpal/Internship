@@ -43,3 +43,10 @@ NOTE:
 - There's no need to complete the task 100%, but please do your best to address it. 
 
 - Please try to upload your task to a GitLab repository and share the link with us. Alternatively, you can zip the project folder and send it to us.
+
+
+
+# Solution Video
+
+![Soution Video](/test_application/demo_vide.gif)
+

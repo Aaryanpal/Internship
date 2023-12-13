@@ -1,9 +1,13 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ new edit update destroy ]
   before_action :set_post, only: %i[ show edit update destroy ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    page = params[:page] || 1
+    page_size = params[:page_size] && Integer(params[:page_size]) <= 100 ? params[:page_size] : 10
+    posts = Post.page(page).per(page_size)
+    @posts = Post.all.page(params[:page]).per(10)
   end
 
   # GET /posts/1 or /posts/1.json
